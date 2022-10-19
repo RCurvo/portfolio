@@ -1,6 +1,5 @@
 import { GetStaticProps } from "next";
 import Image from "next/future/image";
-import { REPL_MODE_SLOPPY } from "repl";
 import { styled } from "../styles";
 
 export const Button = styled('button', {

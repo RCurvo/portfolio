@@ -3,11 +3,11 @@ import { globalCss } from ".";
 export const globalStyles = globalCss({
     "*": {
         margin: 0,
-        padding: 0
+        padding: 0,
     },
     body: {
         "-webkit-font-smooting": "antialiased",
-        backgroundColor: "$secondary",
+        backgroundColor: "black",
         color: '#D3D3D3'
     },
 

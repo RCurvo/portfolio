@@ -7,7 +7,7 @@ export const Header = styled('header', {
     justifyContent: 'space-between',
     padding: '1.5rem 0',
     width: '100%',
-    backgroundColor: '$primary',
+    backgroundColor: '$secondary',
 
     img: {
         marginLeft: '1rem'

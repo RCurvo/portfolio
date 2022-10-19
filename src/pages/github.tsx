@@ -1,12 +1,25 @@
 import { GetStaticProps } from "next"
+import Link from "next/link"
+import { Card, Cointainer } from "../styles/pages/github"
 
 export default function Github({ repos }) {
     return (
         <>
-            {repos.map((item) => {
-                return (<h1 key={item.name}>{item.name}</h1>)
-            }
-            )}
+            <Cointainer>
+                <Card>
+                    <h1>Novo Projeto</h1>
+                    <desc>Essa é uma descrição do projeto</desc>
+                    <Link href="https://github.com">veja o projeto</Link>
+                </Card>
+                {repos.map((item) => {
+                    return (<Card key={item.name}>
+                        <h1>{item.name}</h1>
+                        <desc>{item.description}</desc>
+                        <Link href="https://github.com">veja o projeto</Link>
+                    </Card>)
+                }
+                )}
+            </Cointainer>
         </>)
 }
 
@@ -14,13 +27,6 @@ export default function Github({ repos }) {
 export const getStaticProps: GetStaticProps = async () => {
     const response = await fetch('https://api.github.com/users/RCurvo/repos')
     const data = await response.json()
-    data.map((item) => {
-        console.log(item.name)
-    })
-
-
-
-
     return {
         props: {
             repos: data
