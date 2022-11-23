@@ -6,11 +6,6 @@ export default function Github({ repos }) {
     return (
         <>
             <Cointainer>
-                <Card>
-                    <h1>Novo Projeto</h1>
-                    <desc>Essa é uma descrição do projeto</desc>
-                    <Link href="https://github.com">veja o projeto</Link>
-                </Card>
                 {repos.map((item) => {
                     return (<Card key={item.name}>
                         <h1>{item.name}</h1>
