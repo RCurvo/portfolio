@@ -1,18 +1,25 @@
 import { wrap } from "module";
 import { styled } from "..";
 
-export const Cointainer = styled('div', {
+export const Container = styled('ul', {
     padding: "5rem",
     gap: "1.5rem",
     display: "flex",
+    flex: 'max-content',
     flexWrap: 'wrap',
     alignItems: 'center',
     justifyContent: "center",
     overflow: 'hidden',
     backgroundColor: '$primary',
+    listStyle: "none",
+
+    "&:has(li:hover) li:not(:hover)":{
+        opacity: .7,
+        scale: 0.98
+    }
 })
 
-export const Card = styled('div', {
+export const Card = styled('li', {
     backgroundColor: '$secondary',
     width: '25rem',
     height: '12rem',
@@ -30,5 +37,6 @@ export const Card = styled('div', {
     },
     a: {
         color: 'inherit'
-    }
+    },
+    transition: "all .4s"
 })

@@ -1,21 +1,27 @@
 import { GetStaticProps } from "next"
 import Link from "next/link"
-import { Card, Cointainer } from "../styles/pages/github"
+import { Card, Container } from "../styles/pages/github"
+
+interface Item {
+    name: string,
+    description: string,
+    html_url: string,
+    homepage: string
+}
 
 export default function Github({ repos }) {
     return (
-        <>
-            <Cointainer>
-                {repos.map((item) => {
+            <Container>
+                {repos.map((item: Item) => {
                     return (<Card key={item.name}>
                         <h1>{item.name}</h1>
                         <desc>{item.description}</desc>
-                        <Link href="https://github.com">veja o projeto</Link>
+                            {item.homepage && <Link href={item.homepage}>veja o projeto</Link>}
                     </Card>)
                 }
                 )}
-            </Cointainer>
-        </>)
+            </Container>
+)
 }
 
 

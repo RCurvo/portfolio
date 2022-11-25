@@ -1,7 +1,7 @@
 import { globalStyles } from "../styles/global"
 import Image from 'next/future/image'
 import logo from '../assets/logogradientwhite.png'
-import { Header } from "../styles/pages/app";
+import { Footer, Header } from "../styles/pages/app";
 import Link from "next/link";
 import { Button } from ".";
 
@@ -21,6 +21,9 @@ function MyApp({ Component, pageProps }) {
         </div>
       </Header>
       <Component {...pageProps} />
+      <Footer>
+      <Image src={logo} alt="" width={120}></Image>
+      </Footer>
     </div>)
 }
 
