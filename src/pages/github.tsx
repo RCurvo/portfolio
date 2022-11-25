@@ -9,21 +9,22 @@ interface Item {
     homepage: string
 }
 
-export default function Github({ repos }) {
+export default function Github({repos}) {
     return (
+        <div>
             <Container>
                 {repos.map((item: Item) => {
                     return (<Card key={item.name}>
-                        <h1>{item.name}</h1>
+                        <h2>{item.name}</h2>
                         <desc>{item.description}</desc>
                             {item.homepage && <Link href={item.homepage}>veja o projeto</Link>}
                     </Card>)
                 }
                 )}
             </Container>
+            </div>
 )
 }
-
 
 export const getStaticProps: GetStaticProps = async () => {
     const response = await fetch('https://api.github.com/users/RCurvo/repos')
@@ -32,6 +33,5 @@ export const getStaticProps: GetStaticProps = async () => {
         props: {
             repos: data
         },
-        revalidate: 60 * 60 * 2,
     }
 }

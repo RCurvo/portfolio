@@ -10,7 +10,7 @@ export const globalStyles = globalCss({
         minHeight: "100vh",
         margin: 0,
         "-webkit-font-smooting": "antialiased",
-        backgroundColor: "black",
+        backgroundColor: "$secondary",
         color: '#D3D3D3',
         display:"flex", 
         flexDirection:"column",
